@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'ckeditor',
     'resume',
 ]
 
@@ -122,3 +123,10 @@ STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# Ckeditor, https://docs.hektorprofe.net/django/web-empresarial/personalizando-panel-administrador-parte-3/
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': None,
+    }
+}

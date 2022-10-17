@@ -21,10 +21,10 @@ def blog(request):
     return render(request, 'resume/blog.html', context)
 """
 def blog(request):
-    post_objects = Post.objects.all()
+    post_objects = Post.objects.all().order_by('-date')
     item_name = request.GET.get('item_name')
     if item_name !='' and item_name is not None:
-        post_objects = post_objects.filter(title__icontains=item_name)
+        post_objects = post_objects.filter(title__icontains=item_name).order_by('-date')
 
     return render(request,'resume/blog.html',{'post_objects':post_objects})
 
